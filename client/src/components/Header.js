@@ -1,40 +1,61 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Navbar, NavDropdown, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
 
-class Header extends Component {
-  renderContent() {
-    switch (this.props.auth) {
+import { user, getUserLoading } from '../store/auth/authSelector';
+
+const Header = () => {
+  const userSelector = useSelector(user);
+  const getUserLoadingSelector = useSelector(getUserLoading);
+
+  const handleSelect = (eventKey) => (window.location.href = eventKey);
+
+  const renderLogin = () => {
+    switch (userSelector) {
       case null:
-        return;
-      case false:
-        return <a href="/auth/google">Login With Google</a>;
+        return (
+          <a href="/auth/google">
+            <Button variant="danger">
+              <i className="fab fa-google mr-2"></i>
+              Login with Google
+              {getUserLoadingSelector && (
+                <Spinner animation="border" size="sm" />
+              )}
+            </Button>
+          </a>
+        );
       default:
-        return <a href="/api/logout">Logout</a>;
-    }
-  }
-
-  render() {
-    return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? '/surveys' : '/'}
-            className="brand-logo left"
+        return (
+          <NavDropdown
+            variant="pills"
+            onSelect={handleSelect}
+            title={userSelector.firstName}
           >
-            Vocabs
-          </Link>
-          <ul className="right">{this.renderContent()}</ul>
-        </div>
-      </nav>
-    );
-  }
-}
-
-const mapStateToProps = ({ auth }) => {
-  return {
-    auth
+            <NavDropdown.Item style={{ color: 'black' }} eventKey="/api/logout">
+              Logout
+            </NavDropdown.Item>
+          </NavDropdown>
+        );
+    }
   };
+
+  return (
+    <Navbar bg="primary" variant="dark">
+      <Link to={userSelector ? '/vocabs' : '/'} style={{ marginLeft: '280px' }}>
+        <Navbar.Brand>
+          <b>VOCAB</b>
+        </Navbar.Brand>
+      </Link>
+      <Navbar.Toggle />
+      <Navbar.Collapse className="justify-content-end ">
+        <Navbar.Text style={{ marginRight: '70px' }}>
+          {renderLogin()}
+        </Navbar.Text>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 };
 
-export default connect(mapStateToProps, {})(Header);
+export default Header;

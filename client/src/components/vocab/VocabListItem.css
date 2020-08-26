@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'SansForgeticaRegular';
+  src: url('../../fonts/SansForgeticaRegular.eot');
+  src: url('../../fonts/SansForgeticaRegular.eot') format('embedded-opentype'),
+    url('../../fonts/SansForgeticaRegular.woff2') format('woff2'),
+    url('../../fonts/SansForgeticaRegular.woff') format('woff'),
+    url('../../fonts/SansForgeticaRegular.ttf') format('truetype'),
+    url('../../fonts/SansForgeticaRegular.svg#SansForgeticaRegular')
+      format('svg');
+}
+
+.item {
+  background-color: rgba(241, 239, 226, 0.5);
+  border: 1px solid rgb(82, 72, 65);
+}
+
+.item:first-child {
+  border-radius: 0 0 3px 3px;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  text-align: center;
+}
+
+.item-button {
+  min-width: 48px;
+}
+
+.native {
+  font-weight: bold;
+}
+
+.foreign {
+  font-family: SansForgeticaRegular;
+  color: rgb(30, 144, 255);
+}
+
+.red-on-hover:hover {
+  background-color: red;
+}

@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url('./fonts/OpenSansRegular.eot');
+  src: url('./fonts/OpenSansRegular.eot') format('embedded-opentype'),
+    url('./fonts/OpenSansRegular.woff2') format('woff2'),
+    url('./fonts/OpenSansRegular.woff') format('woff'),
+    url('./fonts/OpenSansRegular.ttf') format('truetype'),
+    url('./fonts/OpenSansRegular.svg#OpenSansRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'OpenSansExtraBold';
+  src: url('./fonts/OpenSansExtraBold.eot');
+  src: url('./fonts/OpenSansExtraBold.eot') format('embedded-opentype'),
+    url('./fonts/OpenSansExtraBold.woff2') format('woff2'),
+    url('./fonts/OpenSansExtraBold.woff') format('woff'),
+    url('./fonts/OpenSansExtraBold.ttf') format('truetype'),
+    url('./fonts/OpenSansExtraBold.svg#OpenSansExtraBold') format('svg');
+}
+
+body {
+  margin: 0;
+  font-family: OpenSansRegular, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  color: navy;
+  background-color: rgb(241, 239, 226);
+  background: url(/images/178749-OWIN0W-508-cropped-belichtungMinus300-kubisch2750x1534.jpg)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  letter-spacing: 1pt;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.list-header {
+  text-align: center;
+  background-color: rgba(241, 239, 226, 0.5);
+  border: 1px solid rgb(82, 72, 65);
+  border-width: 1px 1px 0 1px;
+  border-radius: 3px 3px 0 0;
+  padding: 4px 0;
+}
+
+.button-top {
+  margin-top: 21px;
+  margin-bottom: 34px;
+}
+
+.page-loader {
+  position: fixed;
+  top: 45%;
+  left: 45%;
+}
