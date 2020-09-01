@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import * as vocabActionType from './vocabActionType';
 
@@ -11,6 +12,7 @@ export const addVocab = (vocabData, history) => async (dispatch) => {
   } catch (error) {
     console.log(error);
     dispatch({ type: vocabActionType.ADD_VOCAB_FAILURE });
+    toast.error(error.message);
   }
 };
 
@@ -22,6 +24,7 @@ export const getVocab = () => async (dispatch) => {
   } catch (error) {
     console.log(error);
     dispatch({ type: vocabActionType.GET_VOCAB_FAILURE });
+    toast.error(error.message);
   }
 };
 
@@ -36,6 +39,7 @@ export const updateVocab = (vocabData) => async (dispatch) => {
   } catch (error) {
     console.log(error);
     dispatch({ type: vocabActionType.UPDATE_VOCAB_FAILURE });
+    toast.error(error.message);
   }
 };
 
@@ -50,5 +54,6 @@ export const deleteVocab = (id) => async (dispatch) => {
   } catch (error) {
     console.log(error);
     dispatch({ type: vocabActionType.DELETE_VOCAB_FAILURE });
+    toast.error(error.message);
   }
 };

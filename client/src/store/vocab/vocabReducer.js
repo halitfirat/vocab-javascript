@@ -1,5 +1,4 @@
 import * as vocabActionType from './vocabActionType';
-import { vocabList } from './vocabSelector';
 
 const initialState = {
   addVocabLoading: false,
