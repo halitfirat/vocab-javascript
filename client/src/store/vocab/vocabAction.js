@@ -8,6 +8,7 @@ export const addVocab = (vocabData, history) => async (dispatch) => {
     dispatch({ type: vocabActionType.ADD_VOCAB_BEGINS });
     await axios.post('/api/vocabs', vocabData);
     dispatch({ type: vocabActionType.ADD_VOCAB_SUCCESS });
+
     history.push('/vocabs');
   } catch (error) {
     console.log(error);

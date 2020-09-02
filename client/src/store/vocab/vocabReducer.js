@@ -68,7 +68,6 @@ export default (state = initialState, { type, payload }) => {
         deleteVocabLoading: true
       };
     case vocabActionType.DELETE_VOCAB_SUCCESS:
-      console.log(state.vocabList.filter((voc) => voc._id !== payload));
       return {
         ...state,
         deleteVocabLoading: false,

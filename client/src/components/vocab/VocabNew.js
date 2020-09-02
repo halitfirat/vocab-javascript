@@ -30,6 +30,7 @@ const AddVocab = ({ history }) => {
             autoComplete="off"
             noValidate
           />
+
           {errors[name] && (
             <span style={{ color: 'MediumBlue' }}>This field is required!</span>
           )}
@@ -47,6 +48,7 @@ const AddVocab = ({ history }) => {
               Cancel
             </Button>
           </Link>
+
           <Button variant="primary" className="button-top ml-1" type="submit">
             Save Vocab
             {addVocabLoadingSelector && (
@@ -54,6 +56,7 @@ const AddVocab = ({ history }) => {
             )}
           </Button>
         </div>
+
         <Row>{renderFields()}</Row>
       </form>
     </div>

@@ -10,6 +10,7 @@ const Footer = () => {
         <Nav.Link style={{ pointerEvents: 'none' }}>
           Copyright © {currentYear} Halit Firat. All Rights Reserved.
         </Nav.Link>
+
         <Nav.Link href="https://www.freepik.com/photos/book">
           Book photo created by freepik - www.freepik.com
         </Nav.Link>

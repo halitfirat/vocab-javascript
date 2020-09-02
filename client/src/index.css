@@ -57,8 +57,7 @@ code {
 }
 
 .button-top {
-  margin-top: 21px;
-  margin-bottom: 34px;
+  margin: 21px 9px 34px 0;
 }
 
 .page-loader {

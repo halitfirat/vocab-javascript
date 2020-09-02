@@ -38,6 +38,6 @@
   color: rgb(30, 144, 255);
 }
 
-.red-on-hover:hover {
+.item-button.red-on-hover:hover {
   background-color: red;
 }

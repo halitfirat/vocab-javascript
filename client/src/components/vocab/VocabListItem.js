@@ -35,11 +35,13 @@ const VocabListItem = ({ vocab, testMode, setDeletedVocabId }) => {
     >
       <div className="item-grid">
         <div className="native">{vocab.native}</div>
+
         {testMode ? (
           <VocabTest term={vocab.foreign} vocab={vocab} />
         ) : (
           <div className="foreign">{vocab.foreign}</div>
         )}
+
         <div style={{ textAlign: 'right' }}>
           <Button
             variant="primary"
@@ -52,6 +54,7 @@ const VocabListItem = ({ vocab, testMode, setDeletedVocabId }) => {
               {vocab.score}
             </Badge>
           </Button>
+
           <Button
             onClick={toggleShowModal}
             variant="primary"
@@ -61,6 +64,7 @@ const VocabListItem = ({ vocab, testMode, setDeletedVocabId }) => {
           >
             <i className="fas fa-edit"></i>
           </Button>
+
           <Button
             onClick={() => removeVocab(vocab._id)}
             variant="primary"
@@ -72,6 +76,7 @@ const VocabListItem = ({ vocab, testMode, setDeletedVocabId }) => {
           </Button>
         </div>
       </div>
+
       <VocabUpdate
         onHide={onHide}
         showUpdateVocab={showUpdateVocab}

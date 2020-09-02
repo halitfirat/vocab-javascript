@@ -14,6 +14,7 @@ const Dashboard = () => {
           </Button>
         </Link>
       </div>
+
       <VocabList />
     </div>
   );

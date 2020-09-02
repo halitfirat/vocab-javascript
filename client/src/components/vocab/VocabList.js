@@ -51,7 +51,6 @@ const VocabList = () => {
   }, [updatedVocabSelector]);
 
   useEffect(() => {
-    console.log('deleteVocabLoadingSelector');
     setLocalList([...localList.filter((elem) => elem._id !== deletedVocabId)]);
   }, [deleteVocabLoadingSelector]);
 
@@ -88,6 +87,7 @@ const VocabList = () => {
             id="customSwitch1"
             onClick={toggleSwitch}
           />
+
           <label
             className="custom-control-label font-weight-bold"
             htmlFor="customSwitch1"
@@ -100,6 +100,7 @@ const VocabList = () => {
         {getVocabLoadingSelector && (
           <Spinner animation="border" variant="light" className="page-loader" />
         )}
+
         {listVocab()}
       </ul>
     </div>

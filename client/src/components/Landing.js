@@ -21,11 +21,13 @@ const Landing = () => {
         >
           VOCAB
         </h1>
+
         <div className="box">
           <span>
             <h3>Learn Faster</h3>
           </span>
         </div>
+
         <p style={{ fontWeight: 'bold' }}>FREE FOR USE. ONLY LOGIN REQUIRED.</p>
       </div>
     </div>

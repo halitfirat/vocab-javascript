@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navbar, NavDropdown, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Nav } from 'react-bootstrap';
 
 import { user, getUserLoading } from '../store/auth/authSelector';
 
@@ -43,12 +43,21 @@ const Header = () => {
 
   return (
     <Navbar bg="primary" variant="dark">
-      <Link to={userSelector ? '/vocabs' : '/'} style={{ marginLeft: '280px' }}>
+      <Nav.Link
+        style={{ color: 'white', marginLeft: '50px' }}
+        href="https://github.com/halitfirat/vocab"
+      >
+        <i class="fab fa-github"></i> GitHub
+      </Nav.Link>
+
+      <Link to={userSelector ? '/vocabs' : '/'} style={{ marginLeft: '140px' }}>
         <Navbar.Brand>
           <b>VOCAB</b>
         </Navbar.Brand>
       </Link>
+
       <Navbar.Toggle />
+
       <Navbar.Collapse className="justify-content-end ">
         <Navbar.Text style={{ marginRight: '70px' }}>
           {renderLogin()}

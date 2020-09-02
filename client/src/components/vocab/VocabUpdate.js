@@ -33,6 +33,7 @@ const VocabUpdate = ({ showUpdateVocab, onHide, vocab }) => {
             autoComplete="off"
             noValidate
           />
+
           {errors[name] && (
             <span style={{ color: 'red' }}>This field is required!</span>
           )}
@@ -55,11 +56,16 @@ const VocabUpdate = ({ showUpdateVocab, onHide, vocab }) => {
             Update Vocab
           </Modal.Title>
         </Modal.Header>
+
         <Modal.Body>
           <Row>{renderFields()}</Row>
         </Modal.Body>
+
         <Modal.Footer>
-          <Button onClick={onHide}>Cancel</Button>
+          <Button onClick={onHide} className="mr-2">
+            Cancel
+          </Button>
+
           <Button type="submit">
             Update
             {updateVocabLoadingSelector && (
